@@ -84,25 +84,25 @@ module Fog
             Fog::Logger.debug msg
             raise_azure_exception(e, msg)
           end
-          managed_disk = Azure::ARM::Compute::Models::DataDisk.new
+          managed_disk = Azure::Profiles::Latest::Compute::Models::DataDisk.new
           managed_disk.name = disk_name
           managed_disk.lun = lun
-          managed_disk.create_option = Azure::ARM::Compute::Models::DiskCreateOptionTypes::Attach
+          managed_disk.create_option = Azure::Profiles::Latest::Compute::Models::DiskCreateOptionTypes::Attach
 
           # Managed Disk Caching Type
           managed_disk.caching = case caching
                                  when 'ReadOnly'
-                                   Azure::ARM::Compute::Models::CachingTypes::ReadOnly
+                                   Azure::Profiles::Latest::Compute::Models::CachingTypes::ReadOnly
                                  when 'ReadWrite'
-                                   Azure::ARM::Compute::Models::CachingTypes::ReadWrite
+                                   Azure::Profiles::Latest::Compute::Models::CachingTypes::ReadWrite
                                  when 'None', nil
-                                   Azure::ARM::Compute::Models::CachingTypes::None
+                                   Azure::Profiles::Latest::Compute::Models::CachingTypes::None
                                  else
                                    raise "Invalid Disk Caching Option: #{caching}"
                                  end
 
           # Managed disk parameter
-          managed_disk_params = Azure::ARM::Compute::Models::ManagedDiskParameters.new
+          managed_disk_params = Azure::Profiles::Latest::Compute::Models::ManagedDiskParameters.new
           managed_disk_params.id = disk.id
           managed_disk.managed_disk = managed_disk_params
 
@@ -122,17 +122,17 @@ module Fog
         end
 
         def get_unmanaged_disk_object(disk_name, disk_size, lun, storage_account_name, access_key)
-          data_disk = Azure::ARM::Compute::Models::DataDisk.new
+          data_disk = Azure::Profiles::Latest::Compute::Models::DataDisk.new
           data_disk.name = disk_name
           data_disk.lun = lun
           data_disk.disk_size_gb = disk_size.to_s
-          data_disk.vhd = Azure::ARM::Compute::Models::VirtualHardDisk.new
+          data_disk.vhd = Azure::Profiles::Latest::Compute::Models::VirtualHardDisk.new
           data_disk.vhd.uri = "https://#{storage_account_name}.blob.core.windows.net/vhds/#{storage_account_name}-#{disk_name}.vhd"
-          data_disk.caching = Azure::ARM::Compute::Models::CachingTypes::ReadWrite
+          data_disk.caching = Azure::Profiles::Latest::Compute::Models::CachingTypes::ReadWrite
           blob_name = "#{storage_account_name}-#{disk_name}.vhd"
           disk_exist = check_blob_exist(storage_account_name, blob_name, access_key)
-          data_disk.create_option = Azure::ARM::Compute::Models::DiskCreateOptionTypes::Empty
-          data_disk.create_option = Azure::ARM::Compute::Models::DiskCreateOptionTypes::Attach if disk_exist
+          data_disk.create_option = Azure::Profiles::Latest::Compute::Models::DiskCreateOptionTypes::Empty
+          data_disk.create_option = Azure::Profiles::Latest::Compute::Models::DiskCreateOptionTypes::Attach if disk_exist
           data_disk
         end
 
@@ -212,7 +212,7 @@ module Fog
                 'provisioningState' => 'Succeeded'
               }
           }
-          vm_mapper = Azure::ARM::Compute::Models::VirtualMachine.mapper
+          vm_mapper = Azure::Profiles::Latest::Compute::Models::VirtualMachine.mapper
           @compute_mgmt_client.deserialize(vm_mapper, vm, 'result.body')
         end
       end

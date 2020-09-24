@@ -63,7 +63,7 @@ module ApiStub
                 }
              }
           }'
-          network_interface_mapper = Azure::ARM::Network::Models::NetworkInterface.mapper
+          network_interface_mapper = Azure::Profiles::Latest::Network::Models::NetworkInterface.mapper
           network_client.deserialize(network_interface_mapper, Fog::JSON.decode(nic), 'result.body')
         end
       end

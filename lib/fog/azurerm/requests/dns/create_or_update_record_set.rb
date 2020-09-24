@@ -19,7 +19,7 @@ module Fog
         private
 
         def get_record_set_object(record_set_params, type)
-          record_set = Azure::ARM::Dns::Models::RecordSet.new
+          record_set = Azure::Profiles::Latest::Dns::Models::RecordSet.new
           record_set.name = record_set_params[:name]
           record_set.type = type
           record_set.ttl = record_set_params[:ttl]
@@ -28,13 +28,13 @@ module Fog
           when 'A'
             a_type_records_array = []
             record_set_params[:records].each do |ip|
-              a_record = Azure::ARM::Dns::Models::ARecord.new
+              a_record = Azure::Profiles::Latest::Dns::Models::ARecord.new
               a_record.ipv4address = ip
               a_type_records_array.push(a_record)
             end
             record_set.arecords = a_type_records_array
           when 'CNAME'
-            cname_record = Azure::ARM::Dns::Models::CnameRecord.new
+            cname_record = Azure::Profiles::Latest::Dns::Models::CnameRecord.new
             cname_record.cname = record_set_params[:records].first # because cname only has 1 value and we know the object is an array passed in.
             record_set.cname_record = cname_record
           end

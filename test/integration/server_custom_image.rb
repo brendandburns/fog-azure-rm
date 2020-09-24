@@ -137,7 +137,7 @@ begin
     network_interface_card_ids: ["/subscriptions/#{azure_credentials['subscription_id']}/resourceGroups/#{RG_NAME}/providers/Microsoft.Network/networkInterfaces/NetInt2"],
     platform: 'linux',
     vhd_path: vhd_path,
-    managed_disk_storage_type: Azure::ARM::Compute::Models::StorageAccountTypes::StandardLRS
+    managed_disk_storage_type: Azure::Profiles::Latest::Compute::Models::StorageAccountTypes::StandardLRS
   )
 
   puts "Created custom image managed virtual machine: #{custom_image_virtual_machine_managed.name}"
@@ -160,7 +160,7 @@ begin
     network_interface_card_ids: ["/subscriptions/#{azure_credentials['subscription_id']}/resourceGroups/#{RG_NAME}/providers/Microsoft.Network/networkInterfaces/NetInt3"],
     platform: 'linux',
     vhd_path: vhd_path,
-    managed_disk_storage_type: Azure::ARM::Compute::Models::StorageAccountTypes::StandardLRS
+    managed_disk_storage_type: Azure::Profiles::Latest::Compute::Models::StorageAccountTypes::StandardLRS
   )
 
   loop do

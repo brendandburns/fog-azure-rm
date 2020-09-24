@@ -25,7 +25,7 @@ module Fog
         private
 
         def format_server_parameters(location, version, admin_login, admin_password, tags)
-          server = Azure::ARM::SQL::Models::Server.new
+          server = Azure::Profiles::Latest::SQL::Models::Server.new
           server.version = version
           server.location = location
           server.administrator_login = admin_login

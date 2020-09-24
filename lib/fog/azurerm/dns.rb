@@ -49,7 +49,7 @@ module Fog
 
           credentials = Fog::Credentials::AzureRM.get_credentials(options[:tenant_id], options[:client_id], options[:client_secret], options[:environment])
           telemetry = "fog-azure-rm/#{Fog::AzureRM::VERSION}"
-          @dns_client = ::Azure::ARM::Dns::DnsManagementClient.new(credentials, resource_manager_endpoint_url(options[:environment]))
+          @dns_client = ::Azure::Profiles::Latest::Dns::DnsManagementClient.new(credentials, resource_manager_endpoint_url(options[:environment]))
           @dns_client.subscription_id = options[:subscription_id]
           @dns_client.add_user_agent_information(telemetry)
           @tenant_id = options[:tenant_id]

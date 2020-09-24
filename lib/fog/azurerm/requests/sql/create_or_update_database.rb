@@ -31,7 +31,7 @@ module Fog
         private
 
         def format_database_parameters(location, create_mode, edition, source_database_id, collation, max_size_bytes, requested_service_objective_name, elastic_pool_name, requested_service_objective_id, tags)
-          database = Azure::ARM::SQL::Models::Database.new
+          database = Azure::Profiles::Latest::SQL::Models::Database.new
           database.location = location
           database.edition = edition unless edition.nil?
           database.collation = collation unless collation.nil?

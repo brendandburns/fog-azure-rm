@@ -38,7 +38,7 @@ module ApiStub
               ]
             }
           }'
-          express_route_circuit_mapper = Azure::ARM::Network::Models::ExpressRouteCircuit.mapper
+          express_route_circuit_mapper = Azure::Profiles::Latest::Network::Models::ExpressRouteCircuit.mapper
           network_client.deserialize(express_route_circuit_mapper, Fog::JSON.decode(circuit), 'result.body')
         end
       end

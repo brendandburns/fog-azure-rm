@@ -30,7 +30,7 @@ module Fog
               'endpointLocation' => 'northeurope'
             }
           }
-          endpoint_mapper = Azure::ARM::TrafficManager::Models::Endpoint.mapper
+          endpoint_mapper = Azure::Profiles::Latest::TrafficManager::Models::Endpoint.mapper
           @traffic_mgmt_client.deserialize(endpoint_mapper, endpoint, 'result.body')
         end
       end

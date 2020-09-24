@@ -21,14 +21,14 @@ module Fog
         private
 
         def get_storage_account_update_params(storage_account_hash)
-          params = Azure::ARM::Storage::Models::StorageAccountUpdateParameters.new
-          sku = Azure::ARM::Storage::Models::Sku.new
+          params = Azure::Storage::Models::StorageAccountUpdateParameters.new
+          sku = Azure::Storage::Models::Sku.new
           sku.name = "#{storage_account_hash[:sku_name]}_#{storage_account_hash[:replication]}"
           params.sku = sku
           unless storage_account_hash[:encryption].nil?
-            encryption = Azure::ARM::Storage::Models::Encryption.new
-            encryption_services = Azure::ARM::Storage::Models::EncryptionServices.new
-            encryption_service = Azure::ARM::Storage::Models::EncryptionService.new
+            encryption = Azure::Storage::Models::Encryption.new
+            encryption_services = Azure::Storage::Models::EncryptionServices.new
+            encryption_service = Azure::Storage::Models::EncryptionService.new
             encryption_service.enabled = storage_account_hash[:encryption]
             encryption_service.last_enabled_time = Time.new if encryption_service.enabled
             encryption_services.blob = encryption_service
@@ -50,7 +50,7 @@ module Fog
                 'name' => 'Standard_LRS'
               }
           }
-          storage_account_mapper = Azure::ARM::Storage::Models::StorageAccount.mapper
+          storage_account_mapper = Azure::Storage::Models::StorageAccount.mapper
           storage_mgmt_client.deserialize(storage_account_mapper, storage_account_hash, 'hash')
         end
       end

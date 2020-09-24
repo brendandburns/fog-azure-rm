@@ -27,7 +27,7 @@ module ApiStub
                 ]
              }
           }'
-          subnet_mapper = Azure::ARM::Network::Models::Subnet.mapper
+          subnet_mapper = Azure::Profiles::Latest::Network::Models::Subnet.mapper
           network_client.deserialize(subnet_mapper, Fog::JSON.decode(body), 'result.body')
         end
 
@@ -58,7 +58,7 @@ module ApiStub
               }
             } ]
           }'
-          subnet_mapper = Azure::ARM::Network::Models::SubnetListResult.mapper
+          subnet_mapper = Azure::Profiles::Latest::Network::Models::SubnetListResult.mapper
           network_client.deserialize(subnet_mapper, Fog::JSON.decode(body), 'result.body')
         end
 

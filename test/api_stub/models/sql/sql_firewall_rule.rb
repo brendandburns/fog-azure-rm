@@ -15,7 +15,7 @@ module ApiStub
               "endIpAddress" : "{end-ip-address}"
             }
           }'
-          firewall_rule_mapper = Azure::ARM::SQL::Models::ServerFirewallRule.mapper
+          firewall_rule_mapper = Azure::Profiles::Latest::SQL::Models::ServerFirewallRule.mapper
           firewall_manager_client.deserialize(firewall_rule_mapper, Fog::JSON.decode(firewall_rule), 'result.body')
         end
       end

@@ -50,7 +50,7 @@ module Fog
           options[:environment] = 'AzureCloud' if options[:environment].nil?
 
           credentials = Fog::Credentials::AzureRM.get_credentials(options[:tenant_id], options[:client_id], options[:client_secret], options[:environment])
-          @sql_mgmt_client = ::Azure::ARM::SQL::SqlManagementClient.new(credentials, resource_manager_endpoint_url(options[:environment]))
+          @sql_mgmt_client = ::Azure::Profiles::Latest::SQL::SqlManagementClient.new(credentials, resource_manager_endpoint_url(options[:environment]))
           @sql_mgmt_client.subscription_id = options[:subscription_id]
           telemetry = "fog-azure-rm/#{Fog::AzureRM::VERSION}"
           @sql_mgmt_client.add_user_agent_information(telemetry)

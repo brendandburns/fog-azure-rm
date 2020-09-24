@@ -19,7 +19,7 @@ module Fog
         private
 
         def format_server_firewall_parameters(start_ip, end_ip)
-          firewall_rule = Azure::ARM::SQL::Models::ServerFirewallRule.new
+          firewall_rule = Azure::Profiles::Latest::SQL::Models::ServerFirewallRule.new
           firewall_rule.start_ip_address = start_ip
           firewall_rule.end_ip_address = end_ip
           firewall_rule

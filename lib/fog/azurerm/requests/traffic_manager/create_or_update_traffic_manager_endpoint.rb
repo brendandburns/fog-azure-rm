@@ -20,7 +20,7 @@ module Fog
         private
 
         def get_endpoint_object(target_resource_id, target, weight, priority, endpoint_location, min_child_endpoints)
-          endpoint = Azure::ARM::TrafficManager::Models::Endpoint.new
+          endpoint = Azure::Profiles::Latest::TrafficManager::Models::Endpoint.new
           endpoint.min_child_endpoints = min_child_endpoints
           endpoint.target_resource_id = target_resource_id
           endpoint.endpoint_location = endpoint_location
@@ -45,7 +45,7 @@ module Fog
               'endpointLocation' => 'northeurope'
             }
           }
-          endpoint_mapper = Azure::ARM::TrafficManager::Models::Endpoint.mapper
+          endpoint_mapper = Azure::Profiles::Latest::TrafficManager::Models::Endpoint.mapper
           @traffic_mgmt_client.deserialize(endpoint_mapper, endpoint, 'result.body')
         end
       end

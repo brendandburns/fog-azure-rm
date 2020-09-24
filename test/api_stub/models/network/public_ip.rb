@@ -27,7 +27,7 @@ module ApiStub
                 }
              }
           }'
-          public_ip_mapper = Azure::ARM::Network::Models::PublicIPAddress.mapper
+          public_ip_mapper = Azure::Profiles::Latest::Network::Models::PublicIPAddress.mapper
           network_client.deserialize(public_ip_mapper, Fog::JSON.decode(public_ip), 'result.body')
         end
       end

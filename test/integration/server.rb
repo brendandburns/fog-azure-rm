@@ -147,7 +147,7 @@ begin
     platform: 'linux',
     custom_data: 'echo customData',
     os_disk_caching: Fog::ARM::Compute::Models::CachingTypes::None,
-    managed_disk_storage_type: Azure::ARM::Compute::Models::StorageAccountTypes::StandardLRS
+    managed_disk_storage_type: Azure::Profiles::Latest::Compute::Models::StorageAccountTypes::StandardLRS
   )
   puts "Created managed virtual machine: #{managed_vm.name}"
 

@@ -57,7 +57,7 @@ module ApiStub
               }
             }
           }
-          vm_mapper = Azure::ARM::Compute::Models::VirtualMachine.mapper
+          vm_mapper = Azure::Profiles::Latest::Compute::Models::VirtualMachine.mapper
           compute_client.deserialize(vm_mapper, body, 'result.body')
         end
 
@@ -112,7 +112,7 @@ module ApiStub
               }
             }
           }
-          vm_mapper = Azure::ARM::Compute::Models::VirtualMachine.mapper
+          vm_mapper = Azure::Profiles::Latest::Compute::Models::VirtualMachine.mapper
           compute_client.deserialize(vm_mapper, body, 'result.body')
         end
 
@@ -129,7 +129,7 @@ module ApiStub
               }
             ]
           }'
-          vm_mapper = Azure::ARM::Compute::Models::VirtualMachineSizeListResult.mapper
+          vm_mapper = Azure::Profiles::Latest::Compute::Models::VirtualMachineSizeListResult.mapper
           compute_client.deserialize(vm_mapper, Fog::JSON.decode(body), 'result.body').value
         end
 
@@ -195,7 +195,7 @@ module ApiStub
               }
             }
           }
-          vm_mapper = Azure::ARM::Compute::Models::VirtualMachine.mapper
+          vm_mapper = Azure::Profiles::Latest::Compute::Models::VirtualMachine.mapper
           compute_client.deserialize(vm_mapper, body, 'result.body')
         end
 
@@ -260,7 +260,7 @@ module ApiStub
               }
             }
           }
-          vm_mapper = Azure::ARM::Compute::Models::VirtualMachine.mapper
+          vm_mapper = Azure::Profiles::Latest::Compute::Models::VirtualMachine.mapper
           compute_client.deserialize(vm_mapper, body, 'result.body')
         end
       end

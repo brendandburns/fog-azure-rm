@@ -21,7 +21,7 @@ module ApiStub
                           }
           }]
           }'
-          record_set_mapper = Azure::ARM::Dns::Models::RecordSetListResult.mapper
+          record_set_mapper = Azure::Profiles::Latest::Dns::Models::RecordSetListResult.mapper
           dns_client.deserialize(record_set_mapper, Fog::JSON.decode(body), 'result.body').value
         end
 
@@ -45,7 +45,7 @@ module ApiStub
               ]
             }
           }'
-          record_set_mapper = Azure::ARM::Dns::Models::RecordSet.mapper
+          record_set_mapper = Azure::Profiles::Latest::Dns::Models::RecordSet.mapper
           dns_client.deserialize(record_set_mapper, Fog::JSON.decode(record_set), 'result.body')
         end
 
@@ -66,7 +66,7 @@ module ApiStub
               }
             }
           }'
-          record_set_mapper = Azure::ARM::Dns::Models::RecordSet.mapper
+          record_set_mapper = Azure::Profiles::Latest::Dns::Models::RecordSet.mapper
           dns_client.deserialize(record_set_mapper, Fog::JSON.decode(record_set), 'result.body')
         end
       end

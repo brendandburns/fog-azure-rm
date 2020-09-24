@@ -63,7 +63,7 @@ module ApiStub
               }
             }
           }'
-          network_interface_mapper = Azure::ARM::Network::Models::NetworkInterface.mapper
+          network_interface_mapper = Azure::Profiles::Latest::Network::Models::NetworkInterface.mapper
           network_client.deserialize(network_interface_mapper, Fog::JSON.decode(body), 'result.body')
         end
 
@@ -125,7 +125,7 @@ module ApiStub
               }
             }
           }'
-          network_interface_mapper = Azure::ARM::Network::Models::NetworkInterface.mapper
+          network_interface_mapper = Azure::Profiles::Latest::Network::Models::NetworkInterface.mapper
           network_client.deserialize(network_interface_mapper, Fog::JSON.decode(body), 'result.body')
         end
 
@@ -184,7 +184,7 @@ module ApiStub
               }
             }
           }'
-          network_interface_mapper = Azure::ARM::Network::Models::NetworkInterface.mapper
+          network_interface_mapper = Azure::Profiles::Latest::Network::Models::NetworkInterface.mapper
           network_client.deserialize(network_interface_mapper, Fog::JSON.decode(body), 'result.body')
         end
 
@@ -251,7 +251,7 @@ module ApiStub
               }
             } ]
           }'
-          network_interface_list_mapper = Azure::ARM::Network::Models::NetworkInterfaceListResult.mapper
+          network_interface_list_mapper = Azure::Profiles::Latest::Network::Models::NetworkInterfaceListResult.mapper
           network_client.deserialize(network_interface_list_mapper, Fog::JSON.decode(body), 'result.body')
         end
 

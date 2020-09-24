@@ -20,13 +20,13 @@ module Fog
         private
 
         def create_deployment_object(template_link, parameters_link)
-          deployment = Azure::ARM::Resources::Models::Deployment.new
-          deployment_properties = Azure::ARM::Resources::Models::DeploymentProperties.new
+          deployment = Azure::Resources::Models::Deployment.new
+          deployment_properties = Azure::Resources::Models::DeploymentProperties.new
 
-          template_link_obj = Azure::ARM::Resources::Models::TemplateLink.new
+          template_link_obj = Azure::Resources::Models::TemplateLink.new
           template_link_obj.uri = template_link
 
-          parameters_link_obj = Azure::ARM::Resources::Models::ParametersLink.new
+          parameters_link_obj = Azure::Resources::Models::ParametersLink.new
           parameters_link_obj.uri = parameters_link
 
           deployment_properties.template_link = template_link_obj
@@ -88,7 +88,7 @@ module Fog
               }]
             }
           }
-          result_mapper = Azure::ARM::Resources::Models::DeploymentExtended.mapper
+          result_mapper = Azure::Resources::Models::DeploymentExtended.mapper
           @rmc.deserialize(result_mapper, deployment, 'result.body')
         end
       end

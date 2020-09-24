@@ -13,7 +13,7 @@ module ApiStub
             }
           }'
 
-          express_route_circuit_authorization_mapper = Azure::ARM::Network::Models::ExpressRouteCircuitAuthorization.mapper
+          express_route_circuit_authorization_mapper = Azure::Profiles::Latest::Network::Models::ExpressRouteCircuitAuthorization.mapper
           network_client.deserialize(express_route_circuit_authorization_mapper, Fog::JSON.decode(authorization), 'result.body')
         end
       end

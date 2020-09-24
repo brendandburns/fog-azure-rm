@@ -79,7 +79,7 @@ module Fog
               'provisioningState' => 'Succeeded'
             }
           }
-          vm_mapper = Azure::ARM::Compute::Models::VirtualMachine.mapper
+          vm_mapper = Azure::Profiles::Latest::Compute::Models::VirtualMachine.mapper
           @compute_mgmt_client.deserialize(vm_mapper, vm, 'result.body')
         end
       end

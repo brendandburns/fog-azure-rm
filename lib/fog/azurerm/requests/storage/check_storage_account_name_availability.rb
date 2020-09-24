@@ -26,7 +26,7 @@ module Fog
         private
 
         def create_storage_account_params(name, type)
-          params = Azure::ARM::Storage::Models::StorageAccountCheckNameAvailabilityParameters.new
+          params = Azure::Storage::Models::StorageAccountCheckNameAvailabilityParameters.new
           params.name = name
           params.type = type
           params

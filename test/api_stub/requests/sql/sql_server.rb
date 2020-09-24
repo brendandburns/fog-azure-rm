@@ -12,7 +12,7 @@ module ApiStub
               "administratorLoginPassword" : "{admin-password}"
             }
           }'
-          server_mapper = Azure::ARM::SQL::Models::Server.mapper
+          server_mapper = Azure::Profiles::Latest::SQL::Models::Server.mapper
           sql_manager_client.deserialize(server_mapper, Fog::JSON.decode(body), 'result.body')
         end
 
@@ -29,7 +29,7 @@ module ApiStub
               }
             }]
           }'
-          server_mapper = Azure::ARM::SQL::Models::ServerListResult.mapper
+          server_mapper = Azure::Profiles::Latest::SQL::Models::ServerListResult.mapper
           sql_manager_client.deserialize(server_mapper, Fog::JSON.decode(body), 'result.body')
         end
 

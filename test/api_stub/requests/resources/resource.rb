@@ -16,7 +16,7 @@ module ApiStub
                 "name": "free"
             }
           }'
-          result_mapper = Azure::ARM::Resources::Models::GenericResource.mapper
+          result_mapper = Azure::Resources::Models::GenericResource.mapper
           client.deserialize(result_mapper, Fog::JSON.decode(body), 'result.body')
         end
 
@@ -36,7 +36,7 @@ module ApiStub
           } ],
             "nextLink": "https://management.azure.com/subscriptions/########-####-####-####-############/resourcegroups?api-version=2015-01-01&$skiptoken=######"
           }'
-          result_mapper = Azure::ARM::Resources::Models::ResourceListResult.mapper
+          result_mapper = Azure::Resources::Models::ResourceListResult.mapper
           client.deserialize(result_mapper, Fog::JSON.decode(body), 'result.body')
         end
 
@@ -53,7 +53,7 @@ module ApiStub
             "name": "free"
             }
           }'
-          result_mapper = Azure::ARM::Resources::Models::GenericResource.mapper
+          result_mapper = Azure::Resources::Models::GenericResource.mapper
           client.deserialize(result_mapper, Fog::JSON.decode(body), 'result.body')
         end
       end

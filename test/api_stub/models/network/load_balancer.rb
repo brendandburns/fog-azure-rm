@@ -145,7 +145,7 @@ module ApiStub
               ]
 						}
           }'
-          load_balancer_mapper = Azure::ARM::Network::Models::LoadBalancer.mapper
+          load_balancer_mapper = Azure::Profiles::Latest::Network::Models::LoadBalancer.mapper
           network_client.deserialize(load_balancer_mapper, Fog::JSON.decode(load_balancer), 'result.body')
         end
       end

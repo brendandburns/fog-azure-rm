@@ -24,7 +24,7 @@ module ApiStub
               }
             }
           }'
-          express_route_circuit_mapper = Azure::ARM::Network::Models::ExpressRouteCircuitPeering.mapper
+          express_route_circuit_mapper = Azure::Profiles::Latest::Network::Models::ExpressRouteCircuitPeering.mapper
           network_client.deserialize(express_route_circuit_mapper, Fog::JSON.decode(body), 'result.body')
         end
 
@@ -53,7 +53,7 @@ module ApiStub
               }
             ]
           }'
-          express_route_circuit_mapper = Azure::ARM::Network::Models::ExpressRouteCircuitPeeringListResult.mapper
+          express_route_circuit_mapper = Azure::Profiles::Latest::Network::Models::ExpressRouteCircuitPeeringListResult.mapper
           network_client.deserialize(express_route_circuit_mapper, Fog::JSON.decode(body), 'result.body').value
         end
       end

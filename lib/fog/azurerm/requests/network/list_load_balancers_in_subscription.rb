@@ -19,10 +19,10 @@ module Fog
       # Mock class for Network Request
       class Mock
         def list_load_balancers_in_subscription
-          lb = Azure::ARM::Network::Models::LoadBalancer.new
+          lb = Azure::Profiles::Latest::Network::Models::LoadBalancer.new
           lb.name = 'fogtestloadbalancer'
           lb.location = 'West US'
-          lb.properties = Azure::ARM::Network::Models::LoadBalancerPropertiesFormat.new
+          lb.properties = Azure::Profiles::Latest::Network::Models::LoadBalancerPropertiesFormat.new
           [lb]
         end
       end

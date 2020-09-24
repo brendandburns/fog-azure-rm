@@ -38,7 +38,7 @@ module Fog
                   'provisioningState' => 'Succeeded'
                 }
             }
-          result_mapper = Azure::ARM::Resources::Models::ResourceGroup.mapper
+          result_mapper = Azure::Resources::Models::ResourceGroup.mapper
           @rmc.deserialize(result_mapper, resource_group, 'result.body')
         end
       end

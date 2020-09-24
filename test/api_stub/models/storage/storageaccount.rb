@@ -13,7 +13,7 @@ module ApiStub
                 'name' => 'Standard_LRS'
               }
           }
-          storage_account_mapper = Azure::ARM::Storage::Models::StorageAccount.mapper
+          storage_account_mapper = Azure::Storage::Models::StorageAccount.mapper
           storage_mgmt_client.deserialize(storage_account_mapper, storage_account_hash, 'hash')
         end
       end

@@ -15,7 +15,7 @@ module ApiStub
               "defaultSites": [ "mysite1" ]
             }
           }'
-          gateway_mapper = Azure::ARM::Network::Models::VirtualNetworkGateway.mapper
+          gateway_mapper = Azure::Profiles::Latest::Network::Models::VirtualNetworkGateway.mapper
           network_client.deserialize(gateway_mapper, Fog::JSON.decode(network_gateway), 'result.body')
         end
 
@@ -36,7 +36,7 @@ module ApiStub
               }
             ]
           }'
-          gateway_mapper = Azure::ARM::Network::Models::VirtualNetworkGatewayListResult.mapper
+          gateway_mapper = Azure::Profiles::Latest::Network::Models::VirtualNetworkGatewayListResult.mapper
           network_client.deserialize(gateway_mapper, Fog::JSON.decode(network_gateway), 'result.body')
         end
 

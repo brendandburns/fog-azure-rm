@@ -42,7 +42,7 @@ module Fog
               }
           ]
           }'
-          nsr_mapper = Azure::ARM::Network::Models::SecurityRuleListResult.mapper
+          nsr_mapper = Azure::Profiles::Latest::Network::Models::SecurityRuleListResult.mapper
           @network_client.deserialize(nsr_mapper, JSON.load(nsr_list), 'result.body')
         end
       end

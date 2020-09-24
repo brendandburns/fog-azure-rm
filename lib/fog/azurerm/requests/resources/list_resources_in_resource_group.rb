@@ -33,7 +33,7 @@ module Fog
                 'name' => 'free'
               }
           }
-          result_mapper = Azure::ARM::Resources::Models::GenericResource.mapper
+          result_mapper = Azure::Resources::Models::GenericResource.mapper
           @rmc.deserialize(result_mapper, resources, 'result.body').value
         end
       end

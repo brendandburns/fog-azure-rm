@@ -64,7 +64,7 @@ module ApiStub
                 ]
              }
           }'
-          result_mapper = Azure::ARM::Network::Models::NetworkSecurityGroup.mapper
+          result_mapper = Azure::Profiles::Latest::Network::Models::NetworkSecurityGroup.mapper
           network_client.deserialize(result_mapper, Fog::JSON.decode(nsg), 'result.body')
         end
 
@@ -143,7 +143,7 @@ module ApiStub
                 ]
              }
           }'
-          result_mapper = Azure::ARM::Network::Models::NetworkSecurityGroup.mapper
+          result_mapper = Azure::Profiles::Latest::Network::Models::NetworkSecurityGroup.mapper
           network_client.deserialize(result_mapper, Fog::JSON.decode(nsg), 'result.body')
         end
 
@@ -216,7 +216,7 @@ module ApiStub
              }
             ]
           }'
-          result_mapper = Azure::ARM::Network::Models::NetworkSecurityGroupListResult.mapper
+          result_mapper = Azure::Profiles::Latest::Network::Models::NetworkSecurityGroupListResult.mapper
           network_client.deserialize(result_mapper, Fog::JSON.decode(nsg_list), 'result.body').value
         end
       end

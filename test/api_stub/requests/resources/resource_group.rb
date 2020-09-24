@@ -15,7 +15,7 @@ module ApiStub
               "provisioning_state": "Succeeded"
             }
           }'
-          result_mapper = Azure::ARM::Resources::Models::ResourceGroup.mapper
+          result_mapper = Azure::Resources::Models::ResourceGroup.mapper
           client.deserialize(result_mapper, Fog::JSON.decode(body), 'result.body')
         end
 
@@ -34,12 +34,12 @@ module ApiStub
             } ],
             "nextLink": "https://management.azure.com/subscriptions/########-####-####-####-############/resourcegroups?api-version=2015-01-01&$skiptoken=######"
           }'
-          result_mapper = Azure::ARM::Resources::Models::ResourceGroupListResult.mapper
+          result_mapper = Azure::Resources::Models::ResourceGroupListResult.mapper
           client.deserialize(result_mapper, Fog::JSON.decode(body), 'result.body')
         end
 
         def self.list_resource_groups_for_zones
-          resource_group = ::Azure::ARM::Resources::Models::ResourceGroup.new
+          resource_group = ::Azure::Resources::Models::ResourceGroup.new
           resource_group.id = '/subscriptions/########-####-####-####-############/resourceGroups/fog-test-resource-group'
           resource_group.name = 'fog-test-resource-group'
           resource_group.location = 'West US'

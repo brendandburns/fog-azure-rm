@@ -19,7 +19,7 @@ module Fog
         private
 
         def get_zone_object(zone_params)
-          zone = Azure::ARM::Dns::Models::Zone.new
+          zone = Azure::Profiles::Latest::Dns::Models::Zone.new
           zone.name = zone_params[:name]
           zone.location = zone_params[:location]
           zone.type = zone_params[:type]

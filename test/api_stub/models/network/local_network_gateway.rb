@@ -22,7 +22,7 @@ module ApiStub
                 }
               }
           }
-          local_network_gateway_mapper = Azure::ARM::Network::Models::LocalNetworkGateway.mapper
+          local_network_gateway_mapper = Azure::Profiles::Latest::Network::Models::LocalNetworkGateway.mapper
           network_client.deserialize(local_network_gateway_mapper, local_network_gateway, 'result.body')
         end
       end
